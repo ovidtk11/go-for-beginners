@@ -1,4 +1,4 @@
-package main
+package database
 
 import (
 	"database/sql"
@@ -9,7 +9,7 @@ import (
 )
 
 // Helper function to check if a table exists in the database
-func isTableExists(db *sql.DB, tableName string) (bool, error) {
+func IsTableExists(db *sql.DB, tableName string) (bool, error) {
 	query := fmt.Sprintf("SELECT name FROM sqlite_master WHERE type='table' AND name='%s';", tableName)
 	rows, err := db.Query(query)
 	if err != nil {
