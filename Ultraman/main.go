@@ -82,6 +82,10 @@ func createTable() {
 	}
 }
 
+// slice -> กล่องที่เราต้องการเก็บของ หลายๆชิ้น เช่น object (ex. model.IUltraman)  เราต้องการเก็บ taro, leo ไว้ในกล่อง(ด้วยกัน)
+// เราก็จะสร้าง slice ขึ้นมาเพื่อเก็บของ (object หรือ type นั้นๆ) * slice สามารถบรรจุของได้แค่ type ที่มันประกาศไว้เท่านั้นนะ *
+// data => [slice]<<Type>> -> []model.IUltraman -> [{model.IUltraman},{model.IUltraman}] -> [taro, leo]
+
 func insertUlTraMan(data []model.IUltraman) {
 	for _, u := range data {
 		insertSQL := `
