@@ -92,6 +92,7 @@ func createUltranManData() (data []model.IUltraman) {
 
 	return ultramenData
 }
+
 func insertUlTraMan(data []model.IUltraman) {
 	for _, u := range data {
 		insertSQL := `
