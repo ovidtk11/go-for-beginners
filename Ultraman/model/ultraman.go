@@ -12,6 +12,11 @@ type ultraman struct {
 	TransformKit  string `json:"transformKit"`
 }
 
+func (u *ultraman) ovi() string {
+	//TODO implement me
+	panic("implement me")
+}
+
 func (u *ultraman) Json() string {
 	bytes, err := json.MarshalIndent(u, "", " ")
 	if err != nil {
@@ -56,6 +61,7 @@ type IUltraman interface {
 	Json() string
 	IGetter
 	ISetter
+	ovi() string
 }
 
 type IGetter interface {

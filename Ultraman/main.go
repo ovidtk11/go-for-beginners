@@ -17,24 +17,11 @@ func main() {
 	// Init Table
 	createTable()
 
+	// create untraman data for insert to database
+	data := createUltranManData()
+
 	// Insert sample data into the 'ultramen' table
-	ultramenData := make([]model.IUltraman, 0)
-
-	taro := model.NewUltraman()
-	taro.SetName("Ultraman Taro")
-	taro.SetTool("Florium Beam")
-	taro.SetSpecialAttack("Storium Ray")
-	taro.SetTransformKit("Bracelet")
-
-	leo := model.NewUltraman()
-	leo.SetName("Ultraman Leo")
-	leo.SetTool("Leo Nunchaku")
-	leo.SetSpecialAttack("Leo Kick")
-	leo.SetTransformKit("Leo Ring")
-
-	ultramenData = append(ultramenData, taro, leo)
-
-	insertUlTraMan(ultramenData)
+	insertUlTraMan(data)
 
 }
 
@@ -86,6 +73,25 @@ func createTable() {
 // เราก็จะสร้าง slice ขึ้นมาเพื่อเก็บของ (object หรือ type นั้นๆ) * slice สามารถบรรจุของได้แค่ type ที่มันประกาศไว้เท่านั้นนะ *
 // data => [slice]<<Type>> -> []model.IUltraman -> [{model.IUltraman},{model.IUltraman}] -> [taro, leo]
 
+func createUltranManData() (data []model.IUltraman) {
+	ultramenData := make([]model.IUltraman, 0)
+
+	taro := model.NewUltraman()
+	taro.SetName("Ultaman Taro")
+	taro.SetTool("Florium Beam")
+	taro.SetSpecialAttack("Storium Ray")
+	taro.SetTransformKit("Bracelet")
+
+	leo := model.NewUltraman()
+	leo.SetName("Ultraman Leo")
+	leo.SetTool("Leo Nunchaku")
+	leo.SetSpecialAttack("Leo Kick")
+	leo.SetTransformKit("Leo Ring")
+
+	ultramenData = append(ultramenData, taro, leo)
+
+	return ultramenData
+}
 func insertUlTraMan(data []model.IUltraman) {
 	for _, u := range data {
 		insertSQL := `
