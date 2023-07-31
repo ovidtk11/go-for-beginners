@@ -1,6 +1,6 @@
 package model
 
-import _ "fmt"
+import "fmt"
 
 type godzilla struct {
 	Name     string  //*Godzilla Earth
@@ -8,6 +8,10 @@ type godzilla struct {
 	Height   float64 //300
 	Weight   float64 //100000
 	Ultimate string  //Atomic breath
+}
+
+func (g *godzilla) Roar() {
+	fmt.Println("Roarrrrrrr!!!")
 }
 
 func (g *godzilla) GetUltimate() string {
@@ -61,6 +65,7 @@ type IGodzilla interface {
 	SetWeight(Weight float64)
 	GetUltimate() string
 	SetUltimate(Ultimate string)
+	Roar()
 }
 
 func NewGodzilla() IGodzilla {

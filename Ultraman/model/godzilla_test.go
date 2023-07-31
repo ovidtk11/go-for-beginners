@@ -14,14 +14,25 @@ import (
 func Test_Godzilla(t *testing.T) {
 	t.Run("ทดสอบ GetName", test_GetName_godzilla)
 	t.Run("ทดสอบ SetName", test_SetName_godzilla)
-	t.Run("ทดสอบ GetAge_godzilla", test_GetAge_godzilla)
-	t.Run("ทดสอบ SetAge_godzilla", test_SetAge_godzilla)
-	t.Run("ทดสอบ GetHeight_godzilla", test_GetHeight_godzilla)
-	t.Run("ทดสอบ SetHeight_godzilla", test_SetHeight_godzilla)
-	t.Run("ทดสอบ SetWeight_godzilla", test_GetWeight_godzilla)
-	t.Run("ทดสอบ SetWeight_godzilla", test_SetWeight_godzilla)
-	t.Run("ทดสอบ SetUltimate_godzilla", test_GetUltimate_godzilla)
-	t.Run("ทดสอบ SetUltimate  _godzilla", test_SetUltimate_godzilla)
+	t.Run("ทดสอบ GetAge", test_GetAge_godzilla)
+	t.Run("ทดสอบ SetAge", test_SetAge_godzilla)
+	t.Run("ทดสอบ GetHeight", test_GetHeight_godzilla)
+	t.Run("ทดสอบ SetHeight", test_SetHeight_godzilla)
+	t.Run("ทดสอบ SetWeight", test_GetWeight_godzilla)
+	t.Run("ทดสอบ SetWeight", test_SetWeight_godzilla)
+	t.Run("ทดสอบ SetUltimate ", test_GetUltimate_godzilla)
+	t.Run("ทดสอบ SetUltimate  ", test_SetUltimate_godzilla)
+	t.Run("ทดสอบ Roar  ", test_Roar_godzilla)
+}
+
+func test_Roar_godzilla(t *testing.T) {
+	g := godzilla{}
+
+	actual := CaptureStdout(g.Roar)
+
+	expected := "Roarrrrrrr!!!\n"
+
+	assert.Equal(t, expected, actual)
 }
 
 func test_GetName_godzilla(t *testing.T) {
