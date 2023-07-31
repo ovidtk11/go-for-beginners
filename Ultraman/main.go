@@ -12,17 +12,19 @@ var conn *sql.DB
 func main() {
 
 	// Connect to the SQLite database (creates a new file if it doesn't exist)
-	openConnectDB()
+	//openConnectDB()
 
 	// Init Table
-	createTable()
+	//createTable()
 
 	// create untraman data for insert to database
-	data := createUltranManData()
+	//data := createUltranManData()
 
 	// Insert sample data into the 'ultramen' table
-	insertUlTraMan(data)
+	//insertUlTraMan(data)
 
+	goz := model.NewGodzilla()
+	goz.Roar()
 }
 
 func openConnectDB() {
