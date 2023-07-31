@@ -25,6 +25,15 @@ func main() {
 
 	goz := model.NewGodzilla()
 	goz.Roar()
+
+	st := model.NewStudent()
+	st.SetFirstName("ovi")
+	st.Greeting()
+
+	a := model.NewAnimal()
+	a.SetName("ovi")
+	a.SetSound("meow")
+	a.MakeSound()
 }
 
 func openConnectDB() {
